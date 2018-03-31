@@ -70,6 +70,10 @@
   <li><a href="//facebook.com/{{.}}" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
 {{ end }}
 
+{{ with .Site.Social.facebook_company }}
+  <li><a href="//facebook.com/{{.}}" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+{{ end }}
+
 {{ with .Site.Social.googleplus }}
   <li><a href="//plus.google.com/+{{.}}" target="_blank" title="Google+" class="fa fa-google-plus"></a></li>
 {{ end }}
@@ -108,6 +112,10 @@
   <li><a href="//instagram.com/{{.}}" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
 {{ end }}
 
+{{ with .Site.Social.instagram_company }}
+  <li><a href="//instagram.com/{{.}}" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+{{ end }}
+
 {{ with .Site.Social.tumblr }}
   <li><a href="//{{.}}.tumblr.com" target="_blank" title="Tumblr" class="fa fa-tumblr"></a></li>
 {{ end }}
@@ -125,6 +133,10 @@
 {{ end }}
 
 {{ with .Site.Social.pinterest }}
+  <li><a href="//pinterest.com/{{.}}" target="_blank" title="Pinterest" class="fa fa-pinterest-p"></a></li>
+{{ end }}
+
+{{ with .Site.Social.pinterest_company }}
   <li><a href="//pinterest.com/{{.}}" target="_blank" title="Pinterest" class="fa fa-pinterest-p"></a></li>
 {{ end }}
 
