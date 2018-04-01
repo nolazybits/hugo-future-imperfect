@@ -6,7 +6,6 @@
     <div id="main">
         <!-- Post -->
         {{ $.Scratch.Set "h1" true }}
-        <div>{{ .Permalink }}</div>
         {{ .Render "content-single" }}
     </div>
     {{ partial "sidebar" . }}
