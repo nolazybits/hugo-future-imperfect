@@ -2504,7 +2504,8 @@
 	#sidebar {
 		margin-right: 3em;
 		min-width: 18em;
-		width: 22em;
+		#width: 22em;
+		width: 300px;
 	}
 
 		#sidebar > * {
@@ -2579,11 +2580,13 @@
 			margin: 0 0 1em 0;
 			overflow: hidden;
 			position: relative;
-			width: 4em;
+			#width: 4em;
+			width: 300px;
+			height: 200px;
 		}
 
 			#intro .logo:before {
-				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='0 0 100 100' preserveAspectRatio='none' zoomAndPan='disable'%3E%3Cpolygon points='0,0 100,0 100,25 50,0 0,25' style='fill:%23f4f4f4' /%3E%3Cpolygon points='0,100 100,100 100,75 50,100 0,75' style='fill:%23f4f4f4' /%3E%3C/svg%3E");
+				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='288px' height='192px' viewBox='0 0 300 300' preserveAspectRatio='none' zoomAndPan='disable'%3E%3Cpolygon points='0,0 288,0 288,72 144,0 0,72' style='fill:%23f4f4f4' /%3E%3Cpolygon points='0,288 288,288 288,216 144,288 0,216' style='fill:%23f4f4f4' /%3E%3C/svg%3E");
 				background-position: top left;
 				background-repeat: no-repeat;
 				background-size: 100% 100%;
@@ -2599,7 +2602,7 @@
 			#intro .logo img {
 				display: block;
 				margin-left: -0.25em;
-				width: 4.5em;
+				#width: 4.5em;
 			}
 
 		#intro header h2 {
