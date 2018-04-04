@@ -9,7 +9,9 @@
     </section>
   {{ end }}
 
-  {{ .Render "featured" }}
+  {{ if (ne .Params.hidefeatured "true") }}
+    {{ .Render "featured" }}
+  {{ end }}
   <div id="content">
     {{ .Content }}
   </div>
