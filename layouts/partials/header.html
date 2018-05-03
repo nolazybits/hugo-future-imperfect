@@ -66,12 +66,12 @@
             {{ end }}
         {{ end }}
 
-{{ if (not .Params.disable_highlight) }}
-  {{ $highTheme := .Site.Params.highlightjsTheme }}
-    {{ with .Site.Params.highlightjsVersion }}
-    <link href='{{ $.Site.Params.highlightjsCDN | default "//cdn.bootcss.com" }}/highlight.js/{{ . }}/styles/{{ $highTheme }}.min.css' rel='stylesheet' type='text/css' />
-  {{ end }}
-{{ end }}
+        {{ if (and (not .Site.Params.disable_highlight) (not .Params.disable_highlight)) }}
+            {{ $highTheme := .Site.Params.highlightjsTheme | default "github" }}
+            {{ $highVersion := .Site.Params.highlightjsVersion | default "9.12.0" }}
+            {{ $highCDN := .Site.Params.highlightjsCDN | default "//https://cdnjs.cloudflare.com/ajax/libs" }}
+            <link href='{{ $highCDN }}/highlight.js/{{ $highVersion }}/styles/{{ $highTheme }}.min.css' rel='stylesheet' type='text/css' />
+        {{ end }}
 
       {{ template "_internal/google_analytics.html" . }}
     </head>
