@@ -62,12 +62,12 @@ canonifyURLs = true
 
   # options for highlight.js (version, additional languages, and theme)
   disable_highlight = false # set to true to disable Highlight
-  highlightjsVersion = "9.11.0"
-  highlightjsCDN = "//cdn.bootcss.com"
+  highlightjsVersion = "9.12.0"
+  highlightjsCDN = "https://cdnjs.cloudflare.com/ajax/libs"
   highlightjsLang = ["r", "yaml", "css"]
   highlightjsTheme = "github"
-  MathJaxCDN = "//cdn.bootcss.com"
-  MathJaxVersion = "2.7.1"
+  MathJaxCDN = "https://cdnjs.cloudflare.com/ajax/libs"
+  MathJaxVersion = "2.7.4"
 
 # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
 # due to its ease of use. Feel free to check out both and decide what you would
