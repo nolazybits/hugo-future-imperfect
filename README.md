@@ -13,20 +13,25 @@ interested in seeing a live example.
 ## Table of Contents
 
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [Table of Contents](#table-of-contents)
-- [Getting Started](#getting-started)
-	- [exampleSite](#examplesite)
-	- [config.toml](#configtoml)
-	- [Hugo's Built-In Server](#hugos-built-in-server)
-    - [Hugo's website SEO](#hugos-website-seo)
-- [Shortcodes](#shortcodes)
-	- [fancybox](#fancybox)
-	- [img-post](#img-post)
-	- [img-fit](#img-fit)
-	- [url-link](#url-link)
-- [About the Author](#about-the-author)
-- [License](#license)
+-   [Table of Contents](#table-of-contents)
+-   [Getting Started](#getting-started)
+    -   [exampleSite](#examplesite)
+    -   [config.toml](#configtoml)
+    -   [Hugo's Built-In Server](#hugos-built-in-server)
+-   [Shortcodes](#shortcodes)
+    -   [fancybox](#fancybox)
+    -   [img-post](#img-post)
+    -   [img-fit](#img-fit)
+    -   [url-link](#url-link)
+-   [Syntax highlighting](#syntax-highlighting)
+-   [Multilanguage](#multilingual)
+-   [Code Folding](#code-folding)
+-   [Citation](#citation)
+-   [Related articles](#related-articles)
+-   [Contact form](#contact-form)
+-   [Website SEO](#website-seo)
+-   [About the Author](#about-the-author)
+-   [License](#license)
 
 <!-- /TOC -->
 
@@ -232,7 +237,94 @@ features implemented by the [project contributors](https://github.com/jpescador/
 Send Julio Pescador a tweet [@julio_pescador](https://twitter.com/julio_pescador),
 if you like the theme and are using it for your own personal use.
 
+<<<<<<< HEAD
 ## License
+=======
+Code folding
+------------
+
+Code folding is enabled by default with `disable_codefolding = false` in parameters of the `config` file. It uses some javascript libraries of [bootstrap](https://getbootstrap.com/docs/3.3/javascript/). Code folding (multilingual) buttons only appear when there is code in the document rendered from `Rmd` in blogdown. `disable_codefolding` can also be used in each article config header. Similarly, you can define if code blocks are shown or hidden by default using `codefolding_show = "hide"` in the config file or in each article config.
+The list of `<pre>` blocks on which to apply code folding is defined in the `config` file: `codeblocks = ["pre.sourceCode", "pre.r", "pre.python"]`
+
+<img src="images/code_folding.png" alt="Hugo Future Imperfect Code folding buttons Screenshot" width="75%">
+
+Credit: [statnmap](https://github.com/statnmap)
+
+Citation
+--------
+
+As for [Radix](https://rstudio.github.io/radix/), a citation field can be added to blog posts. Citation is enabled by default with `disable_citation = false` in parameters of the `config` file. It can also be enabled or disabled in each blog post with `disable_citation` in the post YAML / TOML. By default author comes from blog `author` field in the article header but `citation_author` overrides this field if another writing is needed. `citation_author` can be specified globally in `config` file but also for each blog post.
+Code is adapted from: Yihan Wu. (2018-12-21). "Blogdown - shortcode for radix-like Bibtex". Retrieved from <https://www.yihanwu.ca/post/blogdown-shortcode-generation-for-bibtex/>.
+
+<img src="images/citation.png" alt="Hugo Future Imperfect Citation Screenshot" width="75%">
+
+Credit: [statnmap](https://github.com/statnmap)
+
+Related articles
+----------------
+
+You can define parameters for related articles at the bottom of blog posts.
+
+    [related]
+      # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
+      threshold = 50
+      # To get stable "See also" sections we, by default, exclude newer related pages.
+      includeNewer = true
+      # Will lower case keywords in both queries and in the indexes.
+      toLower = true
+    [[related.indices]]
+    name = "keywords"
+    weight = 150
+    [[related.indices]]
+    name  = "author"
+    toLower = true
+    weight = 30
+    [[related.indices]]
+    name  = "tags"
+    weight = 100
+    [[related.indices]]
+    name  = "date"
+    weight = 10
+    pattern = "2006"
+
+See <https://gohugo.io/content-management/related/> for more informations.
+
+<img src="images/screenshot-related.png" alt="Related articles" width="45%" style="">
+
+Credit: [statnmap](https://github.com/statnmap)
+
+Contact form
+------------
+
+Since this page will be static, you can use formspree.io as proxy to send the actual email. Each month, visitors can send you up to one thousand emails without incurring extra charges. Begin the setup by following the steps below:
+
+1.  Enter your email address under ‘emailservice’ in contact/index.md file
+2.  Upload the generated site to your server
+3.  Send a dummy email yourself to confirm your account
+4.  Click the confirm link in the email from formspree.io
+5.  You’re done. Happy mailing!
+
+Credit: [statnmap](https://github.com/statnmap)
+
+Website SEO
+-----------
+
+This theme support SEO elements for your website. It was adapted and integrated thanks to the following guide:
+<https://keithpblog.org/post/hugo-website-seo/>
+
+Credit: [statnmap](https://github.com/statnmap)
+
+About the Authors
+-----------------
+
+Hugo Future Imperfect was ported by [Julio Pescador](https://jpescador.com). Extra features implemented by the [project contributors](https://github.com/statnmap/hugo-future-imperfect/graphs/contributors).
+
+Send Julio Pescador a tweet \[@julio\_pescador\](<https://twitter.com/julio_pescador>), if you like the theme and are using it for your own personal use.
+Send StatnMap a tweet \[@statnmap\](<https://twitter.com/statnmap>), if you like the modifications of the theme and are using it for your own personal use.
+
+License
+-------
+>>>>>>> df61322... citation: general author in config
 
 This theme is released under the MIT license. Please read the [license](https://github.com/jpescador/hugo-future-imperfect/blob/master/LICENSE.md) for more information.
 
