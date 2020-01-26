@@ -12,14 +12,21 @@
   {{ if (ne .Params.hidefeatured "true") }}
     {{ .Render "featured" }}
   {{ end }}
-  <div id="content">
-    {{ .Content }}
+  
+  <div>
+    {{ partial "header_maincodefolding" . }}
+    <br/>
+    <div id="content" class="article-entry">
+      {{ .Content }}
+    </div>
+      {{ partial "citation" . }}
   </div>
 
   <footer>
-    {{ .Render "footer-category" }}
+    {{ partial "footer-category" . }}
+    {{ partial "code-folding" . }}
   </footer>
-
+  {{ partial "related" . }}
 </article>
 {{ .Render "comments" }}
 {{ .Render "prev-next" }}

@@ -1,4 +1,4 @@
-    </div>
+    <!-- </div> -->
     <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
     <!-- Scripts -->
 
@@ -7,10 +7,23 @@
     {{ else }}
       {{ $.Scratch.Set "jsFiles" false }}
     {{ end }}
-
-    <!-- If the value "default" is passed into the param then we will first
+    
+    <!-- Syntax highlighting -->
+    {{ if (not .Params.disable_highlight) }}
+      {{ $highVer := .Site.Params.highlightjsVersion }}
+      {{ $highCDN := (.Site.Params.highlightjsCDN | default "//cdn.bootcss.com") }}
+      {{ if (not (eq $highVer "")) }}
+        <script src="{{ $highCDN }}/highlight.js/{{ $highVer }}/highlight.min.js"></script>
+        {{ $.Scratch.Set "highLangs" .Site.Params.highlightjsLang }}
+        {{ range .Params.highlightjsLang }}{{ $.Scratch.Add "highLangs" . }}{{ end }}
+        {{ range ($.Scratch.Get "highLangs") }}
+        <script src="{{ $highCDN }}/highlight.js/{{ $highVer }}/languages/{{ . }}.min.js"></script>{{ end }}
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      {{ end }}
+    {{ end }}
+        <!-- If the value "default" is passed into the param then we will first
      load the standard js files associated with the theme -->
-    {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
+     {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
       <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
@@ -18,6 +31,7 @@
       <script src="{{ "js/main.js" | relURL }}"></script>
       <script src="{{ "js/backToTop.js" | relURL }}"></script>
     {{ end }}
+    
 
     {{ if ne ($.Scratch.Get "jsFiles") false }}
       {{ range $.Scratch.Get "jsFiles" }}
@@ -26,6 +40,17 @@
         {{ end }}
       {{ end }}
     {{ end }}
-
+    
+    <!-- This is called by default since this theme uses highlight.js -->
+    <script>hljs.initHighlightingOnLoad();</script>
+      {{ partial "footer_mathjax" . }}
+      
+          <!-- Code folding -->
+    {{ if not .Site.Params.disable_codefolding }}
+      <script src="{{ "js/collapse.js" | relURL }}"></script>
+      <script src="{{ "js/dropdown.js" | relURL }}"></script>
+      <script src="{{ "js/transition.js" | relURL }}"></script>
+    {{ end }}
+    
   </body>
 </html>
