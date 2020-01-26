@@ -6,7 +6,7 @@
             {{ if gt $categoriesLen 0 }}
                 <i class="fa fa-folder"></i>
                 {{ range $k, $v := .Params.categories }}
-                {{ $url := printf "categories/%s" (. | urlize | lower) }}
+                {{ $url := printf "categories/%s/" (. | urlize | lower) }}
                 <li><a class="article-category-link" href="{{ $url | absLangURL }}">{{ . }}</a></li>
                 {{ end }}
             {{ end }}
@@ -20,7 +20,7 @@
             {{ if gt $tagsLen 0 }}
                 <i class="fa fa-tags"></i>
                 {{ range $k, $v := .Params.tags }}
-                {{ $url := printf "tags/%s" (. | urlize | lower) }}
+                {{ $url := printf "tags/%s/" (. | urlize | lower) }}
                 <li><a class="article-category-link" href="{{ $url | absLangURL }}">{{ . }}</a></li>
                 {{ end }}
             {{ end }}
