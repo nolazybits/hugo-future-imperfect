@@ -14,7 +14,7 @@
       {{ if $pic.circle }}
         <a href='{{"/" | relURL}}'><img src="{{ $.Scratch.Get "picURL" }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
       {{ else if $pic.imperfect }}
-        <a href='{{"/" | relURL}}' class="logo"><img src="{{ $.Scratch.Get "picURL" }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{"/" | relURL}}' class="logo"><img src="{{ $.Scratch.Get "picURL" }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
       {{ else }}
         <a href='{{"/" | relURL}}'><img src="{{ $.Scratch.Get "picURL" }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
       {{ end }}
@@ -103,8 +103,8 @@
                 <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
                 <span style="float:right;">{{ $value.Count }}</span>
               {{ else }}
-                Uncategorized
-                <span style="float:right;">{{ $value.Count }}</span>
+                <!--Uncategorized
+                <span style="float:right;">{{ $value.Count }}</span>-->
               {{ end }}
             </header>
           </article>
@@ -115,13 +115,14 @@
   {{ end }}
 
   <!-- About -->
+  <!--
   {{ with .Site.Params.intro.about }}
     <section id="mini-bio">
       <h3>About</h3>
       <p>{{ . | safeHTML }}</p>
       <a href="/about/" class="button">Learn More</a>
     </section>
-  {{ end }}
+  {{ end }}-->
 
   <!-- Footer -->
   <section id="footer">
@@ -144,7 +145,6 @@
           {{ .Site.Title }}
         {{ end }}
       {{end}}.
-      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
     </p>
   </section>
 </section>

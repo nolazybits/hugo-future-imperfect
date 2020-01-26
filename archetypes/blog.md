@@ -9,5 +9,6 @@ featuredpath = ""
 linktitle = ""
 title = ""
 type = "post"
+hidefeatured = ""
 
 +++

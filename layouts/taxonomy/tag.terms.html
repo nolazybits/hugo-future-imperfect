@@ -23,8 +23,8 @@
                                 <a href="{{ printf "/%s/%s" $data.Plural $value.Name | urlize | relLangURL }}">{{ $value.Name }}</a>
                                 <span style="float:right;">{{ $value.Count }}</span>
                             {{ else }}
-                                {{ i18n "uncategorized" }}
-                                <span style="float:right;">{{ $value.Count }}</span>
+                                <!--{{ i18n "uncategorized" }}
+                                <span style="float:right;">{{ $value.Count }}</span>-->
                             {{ end }}
                         </header>
                     </article>
